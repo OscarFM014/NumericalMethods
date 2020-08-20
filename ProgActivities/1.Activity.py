@@ -4,25 +4,27 @@
 # x = 1,2,... 10
 from math import exp as e
 
+
 def fac(x):
     val = 0
     if x <= 1:
         return 1
     else:
         val = fac(x-1) * x
-        return val        
+        return val
 
 
 def serie(x):
-    limit = 20 
+    limit = 20
     acu = 1 + x
-    # n  
-    for i in range(2,limit):
+    # n
+    for i in range(2, limit):
         acu += (x**i) / fac(i)
     return acu
 
+
 def ite(x):
-    for i in range(1,x+1):
+    for i in range(1, x+1):
         a_value = serie(i)
         r_value = e(i)
         e_v = r_value - a_value
@@ -31,12 +33,9 @@ def ite(x):
         print('Approximate Value: ' + str(a_value))
         print('Error: ' + str(e_v))
 
+
 if __name__ == "__main__":
     print(ite(10))
 
 
-
-
-
-
-
+# Oscar
