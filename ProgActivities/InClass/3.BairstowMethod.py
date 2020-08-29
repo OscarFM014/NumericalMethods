@@ -1,7 +1,6 @@
 # Bairstow Method
 # https://es.wikipedia.org/wiki/M%C3%A9todo_de_Bairstow
 
-
 import math
 
 
@@ -12,7 +11,7 @@ def bairstow(a, ed1, ed2, r0, s0, maxiter, n):
     for i in range(0, n):
         b.append(0)
         c.append(0)
-        roots.append(0+0*i)
+        roots.append(0+0j)
 
     b.append(0)
     c.append(0)
@@ -46,6 +45,7 @@ def bairstow(a, ed1, ed2, r0, s0, maxiter, n):
                     ea1 = math.fabs(dr / (r+dr))
                 if math.fabs(s) > ed1:
                     ea2 = math.fabs(ds / (s+ds))
+            else:
                 r = r + 1
                 s = s + 1
                 iter = 0
@@ -84,11 +84,13 @@ def quadratic(c, b, a):
 
 
 if __name__ == "__main__":
-
     poly = []
-    poly.append(6)
-    poly.append(11)
-    poly.append(6)
+    poly.append(4)
+    poly.append(0)
+    poly.append(-5)
+    poly.append(0)
     poly.append(1)
 
-    print(bairstow(poly, 0.001, 0.001, 0, 0, 100, 3))
+    print(bairstow(poly, 0.0000001, 0.0000001, 0, 0, 100, 4))
+
+# Oscar
